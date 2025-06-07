@@ -27,7 +27,7 @@ const handleSearch = () => {
 
 const getWeather = async (id) => {
     const res = await fetch(
-        `https://api.weatherapi.com/v1/search.json?key=5c5dc524abe34ee9a38103400242912&q=${searchTerm.query}`
+        `https://api.weatherapi.com/v1/forecast.json?key=5c5dc524abe34ee9a38103400242912&q=${id}&days=3&aqi=no&alerts=no`
     )
 
     const data = await res.json()
@@ -37,6 +37,7 @@ const getWeather = async (id) => {
     searchTerm.query = ''
     searchTerm.results = null
 }
+
 </script>
 
 <template>
